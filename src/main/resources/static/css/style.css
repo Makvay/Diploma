@@ -1,0 +1,100 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap');
+
+        /* Базовые настройки для всего сайта */
+        body {
+            margin: 0;
+            font-family: "BBH Hegarty", sans-serif; /* Резервный шрифт для текста страницы */
+        }
+
+        /* Делаем шапку чёрной, а текст внутри белым */
+        .header {
+            background-color: #000000; /* Чёрный фон */
+            color: #ffffff;            /* Белый цвет текста */
+            padding: 15px 0;           /* Отступы сверху и снизу */
+        }
+
+        /* Выстраиваем заголовок и ссылки в одну строку по краям */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;         /* Ограничение ширины контента */
+            margin: 0 auto;            /* Центрирование контейнера */
+            padding: 0 20px;           /* Отступы по бокам */
+        }
+
+        /* Применяем новый шрифт конкретно к заголовку Info */
+        .header-content h1 {
+            margin: 0;
+            font-size: 28px;
+            /* Стили Google Fonts для BBH Hegarty: */
+            font-family: "BBH Hegarty", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Применяем новый шрифт к ссылкам навигации */
+        .header nav a {
+            color: #ffffff;            /* Белый цвет ссылок */
+            text-decoration: none;     /* Убираем нижнее подчеркивание */
+            margin-left: 25px;         /* Расстояние между ссылками */
+            font-size: 16px;
+            /* Стили Google Fonts для BBH Hegarty: */
+            font-family: "BBH Hegarty", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Эффект при наведении на ссылку */
+        .header nav a:hover {
+            text-decoration: underline;
+            opacity: 0.8;              /* Слегка приглушаем цвет при наведении */
+        }
+ .news {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 50px 20px;
+ }
+
+ .news h2 {
+     margin: 0 0 30px;
+     font-size: 32px;
+ }
+
+ .news-list {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+ }
+
+ .news-card {
+     padding: 25px;
+     border: 1px solid #ddd;
+     border-radius: 8px;
+     background-color: #ffffff;
+ }
+
+ .news-card h3 {
+     margin-top: 0;
+     font-size: 21px;
+ }
+
+ .news-date {
+     color: #777;
+     font-size: 14px;
+ }
+
+ .news-card a {
+     color: #000000;
+     text-decoration: none;
+ }
+
+ .news-card a:hover {
+     text-decoration: underline;
+ }
+ body {
+     margin: 0;
+     font-family: Arial, sans-serif;
+     background-color: #f5f5f5;
+ }
