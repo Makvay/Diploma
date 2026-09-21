@@ -4,6 +4,7 @@ import com.pm.n.dto.CreateNewsRequest;
 import com.pm.n.dto.NewsMapper;
 import com.pm.n.dto.NewsResponse;
 import com.pm.n.entity.News;
+import com.pm.n.entity.NewsStatus;
 import com.pm.n.entity.User;
 import com.pm.n.repository.NewsRepository;
 import com.pm.n.repository.UserRepository;
@@ -40,6 +41,17 @@ public class NewsService {
         News news = newsRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("News not found"));
         return newsMapper.toResponse(news);
+    }
+
+    @Transactional
+    public NewsResponse suggestNews(CreateNewsRequest request, Long userId) {
+        User author = userRepository.findById(userId)
+                .orElseThrow(()-> new RuntimeException("User not foung"));
+        News news = newsMapper.toEntity(request);
+        news.setAuthor(author);
+        news.setStatus(NewsStatus.PENDING);
+
+        return newsMapper.toResponse(newsRepository.save(news));
     }
 
     @Transactional

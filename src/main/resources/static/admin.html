@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add news — Info</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<header class="header">
+    <div class="container header-content">
+        <h1>Info</h1>
+        <nav>
+            <a href="index.html">main</a>
+            <a href="news.html">news</a>
+            <a href="documents.html">docs</a>
+            <a href="admin.html">add news</a>
+            <a href="login.html">sign in</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="container">
+        <h2>Add news</h2>
+
+        <form id="news-form" class="news-form">
+            <label>
+                Title
+                <input type="text" name="title" required maxlength="200">
+            </label>
+
+            <label>
+                Content
+                <textarea name="content" rows="6" required></textarea>
+            </label>
+
+            <label>
+                Author (ID)
+                <input type="number" name="authorId" min="1" placeholder="1">
+            </label>
+
+            <label>
+                Image
+                <input type="file" name="image" accept="image/*">
+            </label>
+
+            <button type="submit">Add</button>
+            <p id="form-status"></p>
+        </form>
+    </section>
+</main>
+
+<script src="js/admin.js"></script>
 
 </body>
 </html>

@@ -12,6 +12,7 @@ public class NewsMapper {
         dto.setTitle(news.getTitle());
         dto.setContent(news.getContent());
         dto.setImageUrl(news.getImageUrl());
+        dto.setCreatedAt(news.getCreatedAt());
 
         if (news.getAuthor() != null) {
             dto.setAuthorId(news.getAuthor().getId());

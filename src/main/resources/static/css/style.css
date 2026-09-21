@@ -1,100 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap');
 
-        @import url('https://fonts.googleapis.com/css2?family=BBH+Hegarty&display=swap');
+/* Базовые настройки */
+body {
+    margin: 0;
+    font-family: "BBH Hegarty", sans-serif;
+    background-color: #f5f5f5;
+}
 
-        /* Базовые настройки для всего сайта */
-        body {
-            margin: 0;
-            font-family: "BBH Hegarty", sans-serif; /* Резервный шрифт для текста страницы */
-        }
+/* Шапка */
+/*.header {*/
+/*    background-color: #000000;*/
+/*    color: #ffffff;*/
+/*    padding: 15px 0;*/
+/*}*/
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+}
 
-        /* Делаем шапку чёрной, а текст внутри белым */
-        .header {
-            background-color: #000000; /* Чёрный фон */
-            color: #ffffff;            /* Белый цвет текста */
-            padding: 15px 0;           /* Отступы сверху и снизу */
-        }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        /* Выстраиваем заголовок и ссылки в одну строку по краям */
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;         /* Ограничение ширины контента */
-            margin: 0 auto;            /* Центрирование контейнера */
-            padding: 0 20px;           /* Отступы по бокам */
-        }
+.header-content h1 {
+    margin: 0;
+    font-size: 28px;
+    font-family: "BBH Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
-        /* Применяем новый шрифт конкретно к заголовку Info */
-        .header-content h1 {
-            margin: 0;
-            font-size: 28px;
-            /* Стили Google Fonts для BBH Hegarty: */
-            font-family: "BBH Hegarty", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
+.header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+    font-family: "BBH Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
-        /* Применяем новый шрифт к ссылкам навигации */
-        .header nav a {
-            color: #ffffff;            /* Белый цвет ссылок */
-            text-decoration: none;     /* Убираем нижнее подчеркивание */
-            margin-left: 25px;         /* Расстояние между ссылками */
-            font-size: 16px;
-            /* Стили Google Fonts для BBH Hegarty: */
-            font-family: "BBH Hegarty", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
+.header nav a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
 
-        /* Эффект при наведении на ссылку */
-        .header nav a:hover {
-            text-decoration: underline;
-            opacity: 0.8;              /* Слегка приглушаем цвет при наведении */
-        }
- .news {
-     max-width: 1200px;
-     margin: 0 auto;
-     padding: 50px 20px;
- }
+/* Секция новостей */
+.news {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
 
- .news h2 {
-     margin: 0 0 30px;
-     font-size: 32px;
- }
+.news h2 {
+    margin: 0 0 30px;
+    font-size: 32px;
+}
 
- .news-list {
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     gap: 20px;
- }
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
- .news-card {
-     padding: 25px;
-     border: 1px solid #ddd;
-     border-radius: 8px;
-     background-color: #ffffff;
- }
+.news-card {
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
 
- .news-card h3 {
-     margin-top: 0;
-     font-size: 21px;
- }
+.news-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
 
- .news-date {
-     color: #777;
-     font-size: 14px;
- }
+.news-date {
+    color: #777;
+    font-size: 14px;
+}
 
- .news-card a {
-     color: #000000;
-     text-decoration: none;
- }
+.news-author {
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+}
 
- .news-card a:hover {
-     text-decoration: underline;
- }
- body {
-     margin: 0;
-     font-family: Arial, sans-serif;
-     background-color: #f5f5f5;
- }
+.news-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.news-empty,
+.news-error {
+    color: #777;
+    font-size: 16px;
+}
+
+/* Форма */
+.form-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.form-section h2 {
+    margin: 0 0 30px;
+    font-size: 32px;
+}
+
+.news-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.news-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.news-form input,
+.news-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fafafa;
+}
+
+.news-form button {
+    padding: 12px 24px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+.news-form button:hover {
+    opacity: 0.8;
+}
+
+#form-status.success { color: green; }
+#form-status.error   { color: red; }

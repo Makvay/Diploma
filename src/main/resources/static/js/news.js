@@ -11,7 +11,7 @@ async function loadNews() {
         const news = await response.json();
 
         if (news.length === 0) {
-            newsList.innerHTML = `<p class="news-empty">Пока новостей нет</p>`;
+            newsList.innerHTML = `<p class="news-empty">There is no news yet.</p>`;
             return;
         }
 
@@ -26,12 +26,23 @@ async function loadNews() {
                 : "";
 
             const authorHtml = item.authorUsername
-                ? `<p class="news-author">Автор: ${item.authorUsername}</p>`
+                ? `<p class="news-author">Author: ${item.authorUsername}</p>`
+                : "";
+
+            const dateHtml = item.createdAt
+                ? `<p class="news-date">${new Date(item.createdAt).toLocaleString("en-EN", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit"
+                })}</p>`
                 : "";
 
             card.innerHTML = `
                 ${imageHtml}
                 <h3>${item.title}</h3>
+                ${dateHtml}
                 ${authorHtml}
                 <p>${item.content}</p>
             `;
@@ -40,8 +51,8 @@ async function loadNews() {
         });
 
     } catch (error) {
-        console.error("Ошибка загрузки новостей:", error);
-        newsList.innerHTML = `<p class="news-error">Не удалось загрузить новости</p>`;
+        console.error("Error loading news:", error);
+        newsList.innerHTML = `<p class="news-error">Failed to load news</p>`;
     }
 }
 

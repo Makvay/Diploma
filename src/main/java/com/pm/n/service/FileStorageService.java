@@ -1,5 +1,6 @@
 package com.pm.n.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,14 +13,15 @@ import java.util.UUID;
 @Service
 public class FileStorageService {
 
-    private static final String UPLOAD_DIR = "C:/Users/Makvay/Desktop/N/uploads";
+    @Value("${app.upload.dir}")
+    private String uploadDir;
 
     public String store(MultipartFile file) throws IOException {
         if (file.isEmpty()) {
             throw new IllegalArgumentException("Файл пустой");
         }
 
-        Path dir = Paths.get(UPLOAD_DIR);
+        Path dir = Paths.get(uploadDir).toAbsolutePath().normalize();
         Files.createDirectories(dir);
 
         String original = file.getOriginalFilename();
